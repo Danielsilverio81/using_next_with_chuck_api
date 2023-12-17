@@ -14,13 +14,14 @@ export default function RootLayout({children,}: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={inter.className}>
         <main className='flex flex-col gap-10 min-h-screen  bg-gray-800'>
           <header className='w-full h-10 flex items-center px-10 bg-yellow-200'>
             <nav className='flex gap-x-5 justify-between w-full text-zinc-800 text-xl'>
-              <Link href="/">Home</Link>
-              <Link href="/jokes">Fatos</Link>
+              <Link className='hover:text-red-400' href="/">Home page</Link>
+              <Link className='hover:text-red-400' href="/jokes">Fatos</Link>
+              <Link className='hover:text-red-400' href="/jokescategory">Fatos por categoria</Link>
             </nav>
           </header>
         {children}
