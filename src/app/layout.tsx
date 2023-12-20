@@ -14,7 +14,7 @@ export default function RootLayout({children,}: {
   children: React.ReactNode
 }) {
   const linkStyles = `hover:text-red-400 text-sm md:text-2xl`
-  const bodyStyles = `flex items-center justify-center min-h-screen  bg-gray-800`
+  const bodyStyles = `flex flex-col md:flex-row items-center justify-center min-h-screen  bg-gray-800`
   return (
     <html lang="en">
       <body className={bodyStyles}>
