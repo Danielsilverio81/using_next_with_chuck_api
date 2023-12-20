@@ -20,8 +20,9 @@ const FormCategoryFetch = () => {
     }
 
     const handleCategoryJoke = async (event:React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedCategory(event.target.value)
-        const res: ApiObjectRes = await fetch(`${urlCategoryChoice}=${selectedCategory}`).then(res => res.json())
+        const category = event.target.value;
+        setSelectedCategory(category);
+        const res: ApiObjectRes = await fetch(`${urlCategoryChoice}=${category}`).then(res => res.json())
         setApiRes(res)
     }
 
@@ -29,11 +30,14 @@ const FormCategoryFetch = () => {
         fetchCategory()
     }, [])
     return (
-        <div>
+       <>
+        <div className="flex flex-col">
             <form
-            className="">
+            className="flex flex-wrap gap-2 my-5">
                 {responseCategory?.map((category, id)=> (
-                    <div key={id}>
+                    <div className="m-2 p-2"
+                     key={id}
+                    >
                         <label htmlFor={category}>{category}</label>
                         <input type="radio"
                          id={`${id}`}
@@ -44,13 +48,16 @@ const FormCategoryFetch = () => {
                     </div>
                 ))}
             </form>
-            {apiRes && (
-                <div>
-                <h2>Fato Escolhido</h2>
-                <span>{apiRes?.value}</span>
-                </div>
-            )}
         </div>
+        <div className="m-2 p-5 w-4/5 h-72 border-2 border-orange-300">
+            {apiRes && (
+              <>
+                <h2>Fato Escolhido</h2>
+                <span className="text-sm md:text-lg p-4 text-center text-emerald-200">{apiRes?.value}</span>
+              </>
+                )}
+         </div>
+       </>
     )
 }
 

@@ -13,17 +13,19 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: {
   children: React.ReactNode
 }) {
+  const linkStyles = `hover:text-red-400 text-sm md:text-2xl`
+  const bodyStyles = `flex items-center justify-center min-h-screen  bg-gray-800`
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className='flex flex-col gap-10 min-h-screen  bg-gray-800'>
-          <header className='w-full h-10 flex items-center px-10 bg-yellow-200'>
-            <nav className='flex gap-x-5 justify-between w-full text-zinc-800 text-xl'>
-              <Link className='hover:text-red-400' href="/">Home page</Link>
-              <Link className='hover:text-red-400' href="/jokes">Fatos</Link>
-              <Link className='hover:text-red-400' href="/jokescategory">Fatos por categoria</Link>
+      <body className={bodyStyles}>
+          <header className='w-fit md:w-1/5 min-h-screen flex flex-col items-center justify-between px-10 bg-yellow-200'>
+            <nav className='flex flex-col gap-11 w-full my-auto text-zinc-800 text-xl'>
+              <Link className= {linkStyles} href="/">Home page</Link>
+              <Link className= {linkStyles} href="/jokes">Fatos</Link>
+              <Link className= {linkStyles} href="/jokescategory">Fatos por categoria</Link>
             </nav>
           </header>
+        <main className='flex flex-grow items-center justify-center'>
         {children}
         </main>
         </body>
