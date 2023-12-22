@@ -13,9 +13,9 @@ export type JokesResponse = {
 
 const JokeComponent = () => {
   const [joke, setJoke] = useState<JokesResponse | null>(null)
-
+  
   const FetchJoke = async() => {
-      const res: JokesResponse= await fetch(`${url}`, {cache: 'no-store'}).then((res) => res.json())
+    const res: JokesResponse= await fetch(`${url}`, {cache: 'no-store'}).then((res) => res.json())
       setJoke(res)
   };
 
@@ -25,7 +25,7 @@ const JokeComponent = () => {
 
   return (
     <>
-    <span className="text-center text-2xl mx-auto p-2">{joke?.value}</span>
+    <span className="text-center text-sm md:text-2xl mx-auto p-2">{joke?.value}</span>
     </>
   )
 }
