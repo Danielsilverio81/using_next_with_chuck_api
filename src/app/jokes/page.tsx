@@ -19,7 +19,15 @@ const JokesPage = () => {
           alt="Chuck Norris anime image"
         />
         <Suspense
-          fallback={<p className="text-red-300">Carregando dados...</p>}
+          fallback={
+            <Image
+          className="border-2 border-black"
+          src="/Loading Fast GIF - Loading Fast - Discover & Share GIFs.gif"
+          width={250}
+          height={250}
+          alt="Loading image gif"
+        />
+          }
         >
           <JokeComponent />
         </Suspense>

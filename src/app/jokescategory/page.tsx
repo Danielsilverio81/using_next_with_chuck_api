@@ -1,5 +1,4 @@
 import FormCategoryFetch from "@/components/FormCategory";
-import { Suspense } from "react";
 
 const JokeCategoryPage = () => {
   return (
@@ -8,11 +7,7 @@ const JokeCategoryPage = () => {
         <h2 className="text-sm md:text-3xl m-5 text-center text-orange-300">
           Escolha uma categoria para seu fato curioso
         </h2>
-        <Suspense
-          fallback={<p className="text-red-300">Carregando dados...</p>}
-        >
           <FormCategoryFetch />
-        </Suspense>
       </div>
     </section>
   );
